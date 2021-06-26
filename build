@@ -1,0 +1,55 @@
+<?php
+require_once './lib/utils.php';
+require_once './lib/lai.php';
+date_default_timezone_set('Asia/Taipei');
+
+$start_time = microtime(true);
+
+$post_dist_dir = './dist/posts';
+@rmdir_recursive($post_dist_dir);
+@mkdir($post_dist_dir, 0777, true);
+
+$posts = get_posts();
+$pages = get_pages();
+$private_pages = get_private_page();
+
+$post_count = count($posts);
+$page_count = count($pages) + count($private_pages);
+echo "Found {$post_count} posts and {$page_count} pages." . PHP_EOL;
+
+// start build index.
+$html = generate_index_html();
+file_put_contents('./dist/index.html', $html);
+
+// end build index.
+
+// start build posts.
+
+foreach ($posts as $post) {
+    echo "Building post '{$post['md']}'" . PHP_EOL;
+    $html = generate_post_html($post);
+    $filename = pathinfo($post['md'], PATHINFO_FILENAME);
+    $fullpath = "{$post_dist_dir}/{$filename}.html";
+
+    file_put_contents($fullpath, $html);
+}
+
+recursive_copy('./src/images', "./dist/src/images");
+recursive_copy('./js', "./dist/js");
+// end build posts.
+
+// start build pages.
+
+foreach (array_merge($pages, $private_pages) as $page) {
+    echo "Building page '{$page['md']}'" . PHP_EOL;
+    $html = generate_page_html($page);
+    $filename = pathinfo($page['md'], PATHINFO_FILENAME);
+    $fullpath = "./dist/{$filename}.html";
+
+    file_put_contents($fullpath, $html);
+}
+// end build pages.
+
+$end_time = microtime(true);
+$total_seconds = $end_time - $start_time;
+echo "Building successful, takes {$total_seconds}s." . PHP_EOL;

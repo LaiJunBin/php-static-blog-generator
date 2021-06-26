@@ -1,0 +1,5 @@
+env.php
+node_modules
+js/*
+!js/highlightjs-line-numbers.min.js
+dist

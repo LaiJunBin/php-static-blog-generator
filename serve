@@ -1,0 +1,14 @@
+<?php
+require_once './env.php';
+
+function spawnBackgroundProcess($sProcessLine)
+{
+    $aPipes = array();
+    $rProcess = proc_open($sProcessLine, array(), $aPipes);
+    proc_close($rProcess);
+}
+
+$php = @constant('PHP_CMD') ?? 'php';
+$host = HOST;
+$port = PORT;
+spawnBackgroundProcess("{$php} -S {$host}:{$port} ./lib/controller.php");

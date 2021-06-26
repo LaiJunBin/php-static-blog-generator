@@ -1,0 +1,50 @@
+.post {
+  background-color: #fffb;
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    .tag {
+      padding: 6px;
+      border: 1px solid #3333;
+      border-radius: 5px;
+      margin: 5px;
+      color: inherit;
+      text-decoration: none;
+      transition: .3s;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #dddd;
+      }
+    }
+  }
+
+
+  table:not(.hljs-ln) {
+    width: 100%;
+
+    thead {
+      background-color: #39f;
+      color: #fff;
+    }
+
+    td, th {
+      padding: 5px;
+    }
+
+    tbody {
+
+      tr {
+        background-color: #fffad8;
+      }
+
+      tr:nth-child(2n) {
+        background-color: #fff;
+      }
+    }
+
+  }
+
+}

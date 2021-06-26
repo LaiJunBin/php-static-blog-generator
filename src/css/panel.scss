@@ -1,0 +1,59 @@
+.panel {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+
+  .cover-image {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 100%;
+    height: 400px;
+  }
+
+  .post-meta-wrapper {
+    position: absolute;
+    bottom: -6.7rem;
+    width: 100%;
+    background-color: #0009;
+    color: #fff;
+    padding: 10px 15px;
+
+    transition: bottom .5s;
+
+    hr {
+      opacity: 1;
+      margin: 1rem !important;
+    }
+
+    & > :not(h2) {
+      margin: 1em 0;
+    }
+
+    .tag {
+      padding: 5px;
+      border: 1px solid #dddd;
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+
+    @media(max-width: 1024px) {
+      & {
+        bottom: 0;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+
+
+  }
+
+  &:hover .post-meta-wrapper {
+    bottom: 0;
+  }
+}
