@@ -33,11 +33,17 @@
       margin: 1em 0;
     }
 
-    .tag {
-      padding: 5px;
-      border: 1px solid #dddd;
-      border-radius: 5px;
-      margin: 0 5px;
+    .tags{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .tag {
+        padding: 5px;
+        border: 1px solid #dddd;
+        border-radius: 5px;
+        margin: 5px;
+      }
     }
 
     @media(max-width: 1024px) {
