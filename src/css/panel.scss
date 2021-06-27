@@ -16,7 +16,7 @@
 
   .post-meta-wrapper {
     position: absolute;
-    bottom: -6.7rem;
+    bottom: -6.5rem;
     width: 100%;
     background-color: #0009;
     color: #fff;
@@ -27,10 +27,6 @@
     hr {
       opacity: 1;
       margin: 1rem !important;
-    }
-
-    & > :not(h2) {
-      margin: 1em 0;
     }
 
     .tags{
