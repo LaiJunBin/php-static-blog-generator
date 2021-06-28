@@ -14,8 +14,8 @@
   <meta name="language" content="{{ env('SITE_LANGUAGE') }}">
   <meta name="author" content="{{ env('SITE_AUTHOR') }}">
 
-  <meta name="og:title" content="{{ env('SITE_TITLE') }}">
-  <meta name="og:description" content="{{ env('SITE_DESCRIPTION') }}">
+  <meta property="og:title" content="{{ env('SITE_TITLE') }}">
+  <meta property="og:description" content="{{ env('SITE_DESCRIPTION') }}">
 
   <script src="/js/app.bundle.js"></script>
 </head>

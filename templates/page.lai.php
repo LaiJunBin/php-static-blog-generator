@@ -13,8 +13,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="language" content="{{ env('SITE_LANGUAGE') }}">
   <meta name="author" content="{{ env('SITE_AUTHOR') }}">
-  <meta name="og:title" content="{{ $title }}">
-  <meta name="og:description" content="{{ $description }}">
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $description }}">
   <script src="/js/app.bundle.js"></script>
 </head>
 <body>
